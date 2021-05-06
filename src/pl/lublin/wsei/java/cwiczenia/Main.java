@@ -1,5 +1,7 @@
 package pl.lublin.wsei.java.cwiczenia;
 
+import pl.lublin.wsei.java.cwiczenia.mylib.Account;
+
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
@@ -7,7 +9,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args)
     {
-        zad11();
+        zad12();
     }
 
     public static void zad7()
@@ -133,5 +135,16 @@ public class Main {
             avg += l;
         }
         System.out.printf("MIN = %d, MAX = %d, AVG = %f", min, max, (float)avg/liczby.length);
+    }
+
+    public static void zad12()
+    {
+        Account acc = new Account();
+        acc.setName("michał Czaja");
+        System.out.println(acc.getName());
+
+        System.out.printf("%s%n",Account.capitalize("stanisŁaw maruSARz"));
+        System.out.printf("%s%n",Account.translit("Adam Nowak"));
+        System.out.printf("%s%n",Account.translit("Michał Czaja"));
     }
 }
