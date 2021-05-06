@@ -2,11 +2,12 @@ package pl.lublin.wsei.java.cwiczenia;
 
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args)
     {
-        zad10();
+        zad11();
     }
 
     public static void zad7()
@@ -111,5 +112,26 @@ public class Main {
         for (int i=0; i<numWidth-numText.length(); i++)
             num = numChar + num;
         return num;
+    }
+
+    public static void zad11()
+    {
+        int[] liczby = new int[30];
+        Random rnd = new Random();
+
+        for (int i = 0; i < 30; i++)
+            liczby[i] = rnd.nextInt();
+
+        int min = Integer.MIN_VALUE;
+        int max = Integer.MAX_VALUE;
+        long avg = 0;
+        for (int l:liczby)
+        {
+            System.out.println(l);
+            if (l < min) min = l;
+            if (l > max) max = l;
+            avg += l;
+        }
+        System.out.printf("MIN = %d, MAX = %d, AVG = %f", min, max, (float)avg/liczby.length);
     }
 }
